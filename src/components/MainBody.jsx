@@ -110,12 +110,12 @@ const MainBody = () => {
       {/* Right section: Chatbox (only after submit) */}
       <div className="w-full md:w-1/2">
         {submittedData ? (
-          <ChatBox
-            key={submittedData.textable + submittedData.jobDiscription}
-            textable={submittedData.textable}
-            jobDiscription={submittedData.jobDiscription}
-            googleKey={apiKey} // Pass API key to ChatBox
-          />
+           <ChatBox
+      // key={JSON.stringify(submittedData)}  // Use a stable key based on the data itself
+      textable={submittedData.textable}
+      jobDiscription={submittedData.jobDiscription}
+      googleKey={apiKey}
+    />
         ) : (
           <div className="text-gray-500 italic">
             Fill out the form and click <strong>Submit</strong> to begin analysis.
